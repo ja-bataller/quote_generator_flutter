@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'random_quiotes.dart';
+import 'random_quotes.dart';
 
 void main() => runApp(MyApp());
 

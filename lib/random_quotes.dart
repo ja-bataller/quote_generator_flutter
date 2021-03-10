@@ -20,7 +20,7 @@ class _refreshQuoteState extends State<refreshQuote> {
 
   copyQuote() {
     setState(() {
-      FlutterClipboard.copy(randomQuote + " by " + author).then(( value ) => print('copied'));
+      FlutterClipboard.copy(' " ' + randomQuote + ' " ' + ' by '  + author).then(( value ) => print('copied'));
     });
   }
 
@@ -38,7 +38,7 @@ class _refreshQuoteState extends State<refreshQuote> {
                   color: Colors.grey[850]),
               child: new Icon(Icons.copy),
             ),
-            backgroundColor: Colors.amberAccent[100],
+            backgroundColor: Colors.blueAccent[100],
           ),
           SizedBox(
             width: 10.0,
@@ -61,7 +61,7 @@ class _refreshQuoteState extends State<refreshQuote> {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Center(
-              child: Text (randomQuote,
+              child: Text (' " ' + randomQuote + ' " ',
                 style: TextStyle(
                   color: Colors.white,
                   fontSize: 20.0,
