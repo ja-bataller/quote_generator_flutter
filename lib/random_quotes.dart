@@ -8,26 +8,26 @@ class refreshQuote extends StatefulWidget {
 }
 
 class _refreshQuoteState extends State<refreshQuote> {
-  String randomQuote = Quotes.getRandom().getContent();
-  String author = Quotes.getRandom().getAuthor();
+  List randomQuote = Quotes.getRandom().getContent();
+
 
   generateQuote() {
     setState(() {
       randomQuote = Quotes.getRandom().getContent();
-      author = Quotes.getRandom().getAuthor();
+      print(randomQuote);
     });
   }
 
   copyQuote() {
     setState(() {
-      FlutterClipboard.copy(' " ' + randomQuote + ' " ' + ' by '  + author).then(( value ) => print('copied'));
+      FlutterClipboard.copy(' " ' + (randomQuote[0]) + ' " ' + ' by ' + (randomQuote[1])).then(( value ) => print('copied'));
     });
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor:Colors.grey[850],
+      backgroundColor:Colors.grey[900],
       floatingActionButton: Row(
         mainAxisAlignment: MainAxisAlignment.end,
         children: [
@@ -61,7 +61,7 @@ class _refreshQuoteState extends State<refreshQuote> {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Center(
-              child: Text (' " ' + randomQuote + ' " ',
+              child: Text (' " ' + (randomQuote[0]) + ' " ',
                 style: TextStyle(
                   color: Colors.white,
                   fontSize: 20.0,
@@ -74,7 +74,7 @@ class _refreshQuoteState extends State<refreshQuote> {
               color: Colors.amberAccent[100],
             ),
             Center(
-              child: Text (author,
+              child: Text ((randomQuote[1]),
                 style: TextStyle(
                   color: Colors.white,
                   fontSize: 18.0,
